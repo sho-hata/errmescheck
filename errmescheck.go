@@ -48,8 +48,11 @@ func run(pass *analysis.Pass) (any, error) {
 					}
 
 					// check error message
-					errI := c.Args[len(c.Args)-1]
-					if b, ok := errI.(*ast.BasicLit); ok {
+					if len(c.Args) == 0 {
+						return
+					}
+					errExpr := c.Args[len(c.Args)-1]
+					if b, ok := errExpr.(*ast.BasicLit); ok {
 						if !strings.HasPrefix(strings.Trim(b.Value, "\""), "failed to") {
 							pass.Reportf(b.Pos(), "The prefix of the error message should be 'failed to ...'")
 						}
