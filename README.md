@@ -15,9 +15,7 @@ NG pattern👮🏻
 ```
 xxxxxxx failed.
 ```
-```go
 
-```
 ## Usage
 ```go
 package a
@@ -37,7 +35,7 @@ func Sample() error {
 }
 ```
 ## Analysis
-```bash
+```
 $ errorsmescheck ./...
 ./a.go:11:10: The prefix of the error message should be 'failed to ...'
 ```
