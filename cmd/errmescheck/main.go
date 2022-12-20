@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/sho-hata/errmescheck"
-	"golang.org/x/tools/go/analysis/unitchecker"
+	"golang.org/x/tools/go/analysis/singlechecker"
 )
 
-func main() { unitchecker.Main(errmescheck.Analyzer) }
+func main() { singlechecker.Main(errmescheck.Analyzer) }
